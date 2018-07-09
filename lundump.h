@@ -1,7 +1,7 @@
 /*
 ** $Id: lundump.h,v 1.44 2014/06/19 18:27:20 roberto Exp roberto $
 ** load precompiled LUA chunks
-** See Copyright Notice in lua.h
+** See Copyright Notice in LUA.h
 */
 
 #ifndef lundump_h

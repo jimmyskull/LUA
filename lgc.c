@@ -1,7 +1,7 @@
 /*
 ** $Id: lgc.c,v 2.253 2018/03/16 14:22:09 roberto Exp roberto $
 ** Garbage Collector
-** See Copyright Notice in lua.h
+** See Copyright Notice in LUA.h
 */
 
 #define lgc_c
@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "lua.h"
+#include "LUA.h"
 
 #include "ldebug.h"
 #include "ldo.h"

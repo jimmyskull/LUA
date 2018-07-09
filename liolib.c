@@ -1,7 +1,7 @@
 /*
 ** $Id: liolib.c,v 2.155 2018/02/21 13:48:44 roberto Exp roberto $
 ** Standard I/O (and system) library
-** See Copyright Notice in lua.h
+** See Copyright Notice in LUA.h
 */
 
 #define liolib_c
@@ -17,10 +17,10 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "lua.h"
+#include "LUA.h"
 
 #include "lauxlib.h"
-#include "lualib.h"
+#include "LUAlib.h"
 
 
 

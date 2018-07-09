@@ -1,7 +1,7 @@
 /*
 ** $Id: lvm.c,v 2.358 2018/06/15 14:14:20 roberto Exp roberto $
 ** LUA virtual machine
-** See Copyright Notice in lua.h
+** See Copyright Notice in LUA.h
 */
 
 #define lvm_c
@@ -16,7 +16,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "lua.h"
+#include "LUA.h"
 
 #include "ldebug.h"
 #include "ldo.h"

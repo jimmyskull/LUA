@@ -1,13 +1,13 @@
 /*
 ** $Id: lctype.h,v 1.12 2011/07/15 12:50:29 roberto Exp roberto $
 ** 'ctype' functions for LUA
-** See Copyright Notice in lua.h
+** See Copyright Notice in LUA.h
 */
 
 #ifndef lctype_h
 #define lctype_h
 
-#include "lua.h"
+#include "LUA.h"
 
 
 /*

@@ -1,7 +1,7 @@
 /*
 ** $Id: lcorolib.c,v 1.10 2016/04/11 19:19:55 roberto Exp roberto $
 ** Coroutine Library
-** See Copyright Notice in lua.h
+** See Copyright Notice in LUA.h
 */
 
 #define lcorolib_c
@@ -12,10 +12,10 @@
 
 #include <stdlib.h>
 
-#include "lua.h"
+#include "LUA.h"
 
 #include "lauxlib.h"
-#include "lualib.h"
+#include "LUAlib.h"
 
 
 static lua_State *getco (lua_State *L) {

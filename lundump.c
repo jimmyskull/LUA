@@ -1,7 +1,7 @@
 /*
 ** $Id: lundump.c,v 2.49 2017/12/07 18:59:52 roberto Exp roberto $
 ** load precompiled LUA chunks
-** See Copyright Notice in lua.h
+** See Copyright Notice in LUA.h
 */
 
 #define lundump_c
@@ -12,7 +12,7 @@
 
 #include <string.h>
 
-#include "lua.h"
+#include "LUA.h"
 
 #include "ldebug.h"
 #include "ldo.h"

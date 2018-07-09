@@ -1,7 +1,7 @@
 /*
 ** $Id: lcode.c,v 2.160 2018/03/16 14:22:09 roberto Exp roberto $
 ** Code generator for LUA
-** See Copyright Notice in lua.h
+** See Copyright Notice in LUA.h
 */
 
 #define lcode_c
@@ -14,7 +14,7 @@
 #include <math.h>
 #include <stdlib.h>
 
-#include "lua.h"
+#include "LUA.h"
 
 #include "lcode.h"
 #include "ldebug.h"

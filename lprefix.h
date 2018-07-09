@@ -1,7 +1,7 @@
 /*
 ** $Id: lprefix.h,v 1.1 2014/11/03 15:12:44 roberto Exp roberto $
 ** Definitions for LUA code that must come before any other header file
-** See Copyright Notice in lua.h
+** See Copyright Notice in LUA.h
 */
 
 #ifndef lprefix_h

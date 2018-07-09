@@ -1,7 +1,7 @@
 /*
 ** $Id: ltable.c,v 2.139 2018/06/15 14:14:20 roberto Exp roberto $
 ** LUA tables (hash)
-** See Copyright Notice in lua.h
+** See Copyright Notice in LUA.h
 */
 
 #define ltable_c
@@ -26,7 +26,7 @@
 #include <math.h>
 #include <limits.h>
 
-#include "lua.h"
+#include "LUA.h"
 
 #include "ldebug.h"
 #include "ldo.h"

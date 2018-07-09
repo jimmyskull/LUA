@@ -1,7 +1,7 @@
 /*
 ** $Id: llex.c,v 2.101 2018/03/07 15:55:38 roberto Exp roberto $
 ** Lexical Analyzer
-** See Copyright Notice in lua.h
+** See Copyright Notice in LUA.h
 */
 
 #define llex_c
@@ -13,7 +13,7 @@
 #include <locale.h>
 #include <string.h>
 
-#include "lua.h"
+#include "LUA.h"
 
 #include "lctype.h"
 #include "ldebug.h"

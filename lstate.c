@@ -1,7 +1,7 @@
 /*
 ** $Id: lstate.c,v 2.154 2018/06/15 19:31:22 roberto Exp roberto $
 ** Global State
-** See Copyright Notice in lua.h
+** See Copyright Notice in LUA.h
 */
 
 #define lstate_c
@@ -13,7 +13,7 @@
 #include <stddef.h>
 #include <string.h>
 
-#include "lua.h"
+#include "LUA.h"
 
 #include "lapi.h"
 #include "ldebug.h"

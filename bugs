@@ -917,7 +917,7 @@ The simplest solution is to use DirectX with
 the D3DCREATE_FPU_PRESERVE flag.
 
 Otherwise, you can change the definition of lua_number2int,
-in luaconf.h, to this one:
+in LUAconf.h, to this one:
 #define lua_number2int(i,d)   __asm fld d   __asm fistp i
 ]],
 
@@ -1702,7 +1702,7 @@ end)
 print(coroutine.resume(co))
 ]],
 patch = [[
-luaconf.h:
+LUAconf.h:
 443c443,444
 < ** functions to consume unlimited stack space.
 ---
@@ -2056,7 +2056,7 @@ what = [[internal macro 'svalue' is wrong]],
 report = [[Martijn van Buul, on 2008/08/04]],
 since = [[5.1]],
 example = [[
-/* in luaconf.h */
+/* in LUAconf.h */
 #define LUAI_USER_ALIGNMENT_T   union { char b[32]; }
 ]],
 patch = [[

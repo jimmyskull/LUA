@@ -1,7 +1,7 @@
 /*
 ** $Id: linit.c,v 1.40 2017/06/27 18:32:49 roberto Exp roberto $
 ** Initialization of libraries for lua.c and other clients
-** See Copyright Notice in lua.h
+** See Copyright Notice in LUA.h
 */
 
 
@@ -29,9 +29,9 @@
 
 #include <stddef.h>
 
-#include "lua.h"
+#include "LUA.h"
 
-#include "lualib.h"
+#include "LUAlib.h"
 #include "lauxlib.h"
 
 

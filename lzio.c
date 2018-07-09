@@ -1,7 +1,7 @@
 /*
 ** $Id: lzio.c,v 1.36 2014/11/02 19:19:04 roberto Exp roberto $
 ** Buffered streams
-** See Copyright Notice in lua.h
+** See Copyright Notice in LUA.h
 */
 
 #define lzio_c
@@ -12,7 +12,7 @@
 
 #include <string.h>
 
-#include "lua.h"
+#include "LUA.h"
 
 #include "llimits.h"
 #include "lmem.h"

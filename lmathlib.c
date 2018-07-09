@@ -1,7 +1,7 @@
 /*
 ** $Id: lmathlib.c,v 1.134 2018/05/16 11:27:59 roberto Exp roberto $
 ** Standard mathematical library
-** See Copyright Notice in lua.h
+** See Copyright Notice in LUA.h
 */
 
 #define lmathlib_c
@@ -16,10 +16,10 @@
 #include <stdlib.h>
 #include <time.h>
 
-#include "lua.h"
+#include "LUA.h"
 
 #include "lauxlib.h"
-#include "lualib.h"
+#include "LUAlib.h"
 
 
 #undef PI

@@ -1,7 +1,7 @@
 /*
 ** $Id: ltests.c,v 2.244 2018/06/11 14:19:50 roberto Exp roberto $
 ** Internal Module for Debugging of the LUA Implementation
-** See Copyright Notice in lua.h
+** See Copyright Notice in LUA.h
 */
 
 #define ltests_c
@@ -16,7 +16,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "lua.h"
+#include "LUA.h"
 
 #include "lapi.h"
 #include "lauxlib.h"
@@ -30,7 +30,7 @@
 #include "lstate.h"
 #include "lstring.h"
 #include "ltable.h"
-#include "lualib.h"
+#include "LUAlib.h"
 
 
 

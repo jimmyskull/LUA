@@ -1,7 +1,7 @@
 /*
 ** $Id: loadlib.c,v 1.131 2017/12/13 12:51:42 roberto Exp roberto $
 ** Dynamic library loader for LUA
-** See Copyright Notice in lua.h
+** See Copyright Notice in LUA.h
 **
 ** This module contains an implementation of loadlib for Unix systems
 ** that have dlfcn, an implementation for Windows, and a stub for other
@@ -18,10 +18,10 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "lua.h"
+#include "LUA.h"
 
 #include "lauxlib.h"
-#include "lualib.h"
+#include "LUAlib.h"
 
 
 /*

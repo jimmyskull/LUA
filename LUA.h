@@ -1,5 +1,5 @@
 /*
-** $Id: lua.h,v 1.346 2018/04/04 14:23:41 roberto Exp roberto $
+** $Id: LUA.h,v 1.346 2018/04/04 14:23:41 roberto Exp roberto $
 ** LUA - A Scripting Language
 ** LUA.org, PUC-Rio, Brazil (http://www.lua.org)
 ** See Copyright Notice at the end of this file
@@ -13,7 +13,7 @@
 #include <stddef.h>
 
 
-#include "luaconf.h"
+#include "LUAconf.h"
 
 
 #define LUA_VERSION_MAJOR	"5"

@@ -1,7 +1,7 @@
 /*
 ** $Id: ldebug.h,v 2.17 2018/05/02 18:17:59 roberto Exp roberto $
 ** Auxiliary functions from Debug Interface module
-** See Copyright Notice in lua.h
+** See Copyright Notice in LUA.h
 */
 
 #ifndef ldebug_h

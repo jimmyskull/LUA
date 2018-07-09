@@ -1,7 +1,7 @@
 /*
 ** $Id: ltests.h,v 2.58 2018/04/19 15:42:41 roberto Exp roberto $
 ** Internal Header for Debugging of the LUA Implementation
-** See Copyright Notice in lua.h
+** See Copyright Notice in LUA.h
 */
 
 #ifndef ltests_h

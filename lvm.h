@@ -1,7 +1,7 @@
 /*
 ** $Id: lvm.h,v 2.51 2018/02/23 13:13:31 roberto Exp roberto $
 ** LUA virtual machine
-** See Copyright Notice in lua.h
+** See Copyright Notice in LUA.h
 */
 
 #ifndef lvm_h

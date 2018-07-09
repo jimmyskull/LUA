@@ -1,7 +1,7 @@
 /*
-** $Id: luaconf.h,v 1.270 2018/06/18 12:51:05 roberto Exp roberto $
+** $Id: LUAconf.h,v 1.270 2018/06/18 12:51:05 roberto Exp roberto $
 ** Configuration file for LUA
-** See Copyright Notice in lua.h
+** See Copyright Notice in LUA.h
 */
 
 
@@ -516,7 +516,7 @@
 #else				/* }{ */
 
 #error "Compiler does not support 'long long'. Use option '-DLUA_32BITS' \
-  or '-DLUA_C89_NUMBERS' (see file 'luaconf.h' for details)"
+  or '-DLUA_C89_NUMBERS' (see file 'LUAconf.h' for details)"
 
 #endif				/* } */
 

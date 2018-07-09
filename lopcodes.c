@@ -1,7 +1,7 @@
 /*
 ** $Id: lopcodes.c,v 1.81 2018/04/04 14:23:41 roberto Exp roberto $
 ** Opcodes for LUA virtual machine
-** See Copyright Notice in lua.h
+** See Copyright Notice in LUA.h
 */
 
 #define lopcodes_c

@@ -1,7 +1,7 @@
 /*
 ** $Id: llimits.h,v 1.150 2018/05/30 14:25:52 roberto Exp roberto $
 ** Limits, basic types, and some other 'installation-dependent' definitions
-** See Copyright Notice in lua.h
+** See Copyright Notice in LUA.h
 */
 
 #ifndef llimits_h
@@ -12,7 +12,7 @@
 #include <stddef.h>
 
 
-#include "lua.h"
+#include "LUA.h"
 
 /*
 ** 'lu_mem' and 'l_mem' are unsigned/signed integers big enough to count

@@ -1,7 +1,7 @@
 /*
 ** $Id: ltm.c,v 2.69 2018/06/08 19:06:59 roberto Exp roberto $
 ** Tag methods
-** See Copyright Notice in lua.h
+** See Copyright Notice in LUA.h
 */
 
 #define ltm_c
@@ -12,7 +12,7 @@
 
 #include <string.h>
 
-#include "lua.h"
+#include "LUA.h"
 
 #include "ldebug.h"
 #include "ldo.h"

@@ -1,7 +1,7 @@
 /*
 ** $Id: lauxlib.c,v 1.294 2018/02/27 18:47:32 roberto Exp roberto $
 ** Auxiliary functions for building LUA libraries
-** See Copyright Notice in lua.h
+** See Copyright Notice in LUA.h
 */
 
 #define lauxlib_c
@@ -22,7 +22,7 @@
 ** Any function declared here could be written as an application function.
 */
 
-#include "lua.h"
+#include "LUA.h"
 
 #include "lauxlib.h"
 
