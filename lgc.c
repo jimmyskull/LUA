@@ -569,7 +569,7 @@ static int traverseCclosure (global_State *g, CClosure *cl) {
 }
 
 /*
-** Traverse a Lua closure, marking its prototype and its upvalues.
+** Traverse a LUA closure, marking its prototype and its upvalues.
 ** (Both can be NULL while closure is being created.)
 */
 static int traverseLclosure (global_State *g, LClosure *cl) {
@@ -1308,7 +1308,7 @@ static void genstep (lua_State *L, global_State *g) {
 ** Set the "time" to wait before starting a new GC cycle; cycle will
 ** start when memory use hits the threshold of ('estimate' * pause /
 ** PAUSEADJ). (Division by 'estimate' should be OK: it cannot be zero,
-** because Lua cannot even start with less than PAUSEADJ bytes).
+** because LUA cannot even start with less than PAUSEADJ bytes).
 */
 static void setpause (global_State *g) {
   l_mem threshold, debt;
@@ -1353,7 +1353,7 @@ static void deletelist (lua_State *L, GCObject *p, GCObject *limit) {
 
 
 /*
-** Call all finalizers of the objects in the given Lua state, and
+** Call all finalizers of the objects in the given LUA state, and
 ** then free all objects, except for the main thread.
 */
 void luaC_freeallobjects (lua_State *L) {

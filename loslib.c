@@ -61,7 +61,7 @@
 
 #if !defined(l_time_t)		/* { */
 /*
-** type to represent time_t in Lua
+** type to represent time_t in LUA
 */
 #define l_timet			lua_Integer
 #define l_pushtime(L,t)		lua_pushinteger(L,(lua_Integer)(t))
@@ -77,7 +77,7 @@ static time_t l_checktime (lua_State *L, int arg) {
 
 #if !defined(l_gmtime)		/* { */
 /*
-** By default, Lua uses gmtime/localtime, except when POSIX is available,
+** By default, LUA uses gmtime/localtime, except when POSIX is available,
 ** where it uses gmtime_r/localtime_r
 */
 
@@ -102,7 +102,7 @@ static time_t l_checktime (lua_State *L, int arg) {
 /*
 ** {==================================================================
 ** Configuration for 'tmpnam':
-** By default, Lua uses tmpnam except when POSIX is available, where
+** By default, LUA uses tmpnam except when POSIX is available, where
 ** it uses mkstemp.
 ** ===================================================================
 */

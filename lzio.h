@@ -57,7 +57,7 @@ struct Zio {
   const char *p;		/* current position in buffer */
   lua_Reader reader;		/* reader function */
   void *data;			/* additional data */
-  lua_State *L;			/* Lua state (for reader) */
+  lua_State *L;			/* LUA state (for reader) */
 };
 
 

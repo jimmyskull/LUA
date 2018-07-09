@@ -9,7 +9,7 @@
 #define LUA_LIB
 
 /*
-** If you embed Lua in your program and need to open the standard
+** If you embed LUA in your program and need to open the standard
 ** libraries, call luaL_openlibs in your program. If you need a
 ** different set of libraries, copy this file to your project and edit
 ** it to suit your needs.
@@ -36,7 +36,7 @@
 
 
 /*
-** these libs are loaded by lua.c and are readily available to any Lua
+** these libs are loaded by lua.c and are readily available to any LUA
 ** program
 */
 static const luaL_Reg loadedlibs[] = {

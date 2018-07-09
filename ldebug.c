@@ -34,7 +34,7 @@
 #define noLuaClosure(f)		((f) == NULL || (f)->c.tt == LUA_TCCL)
 
 
-/* Active Lua function (given call info) */
+/* Active LUA function (given call info) */
 #define ci_func(ci)		(clLvalue(s2v((ci)->func)))
 
 
@@ -225,7 +225,7 @@ LUA_API const char *lua_getlocal (lua_State *L, const lua_Debug *ar, int n) {
   const char *name;
   lua_lock(L);
   if (ar == NULL) {  /* information about non-active function? */
-    if (!isLfunction(s2v(L->top - 1)))  /* not a Lua function? */
+    if (!isLfunction(s2v(L->top - 1)))  /* not a LUA function? */
       name = NULL;
     else  /* consider live variables at function start (parameters) */
       name = luaF_getlocalname(clLvalue(s2v(L->top - 1))->p, n, 0);
@@ -269,7 +269,7 @@ static void funcinfo (lua_Debug *ar, Closure *cl) {
     ar->source = p->source ? getstr(p->source) : "=?";
     ar->linedefined = p->linedefined;
     ar->lastlinedefined = p->lastlinedefined;
-    ar->what = (ar->linedefined == 0) ? "main" : "Lua";
+    ar->what = (ar->linedefined == 0) ? "main" : "LUA";
   }
   luaO_chunkid(ar->short_src, ar->source, LUA_IDSIZE);
 }
@@ -312,7 +312,7 @@ static const char *getfuncname (lua_State *L, CallInfo *ci, const char **name) {
     *name = "__gc";
     return "metamethod";  /* report it as such */
   }
-  /* calling function is a known Lua function? */
+  /* calling function is a known LUA function? */
   else if (!(ci->callstatus & CIST_TAIL) && isLua(ci->previous))
     return funcnamefromcode(L, ci->previous, name);
   else return NULL;  /* no way to find a name */
@@ -579,7 +579,7 @@ static const char *gxf (const Proto *p, int pc, Instruction i, int isup) {
 
 /*
 ** Try to find a name for a function based on the code that called it.
-** (Only works when function was called by a Lua function.)
+** (Only works when function was called by a LUA function.)
 ** Returns what the name is (e.g., "for iterator", "method",
 ** "metamethod") and sets '*name' to point to the name.
 */
@@ -765,7 +765,7 @@ l_noret luaG_runerror (lua_State *L, const char *fmt, ...) {
   va_start(argp, fmt);
   msg = luaO_pushvfstring(L, fmt, argp);  /* format message */
   va_end(argp);
-  if (isLua(ci))  /* if Lua function, add source:line information */
+  if (isLua(ci))  /* if LUA function, add source:line information */
     luaG_addinfo(L, msg, ci_func(ci)->p->source, currentline(ci));
   luaG_errormsg(L);
 }

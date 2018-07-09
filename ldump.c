@@ -1,6 +1,6 @@
 /*
 ** $Id: ldump.c,v 2.40 2017/11/28 11:19:07 roberto Exp roberto $
-** save precompiled Lua chunks
+** save precompiled LUA chunks
 ** See Copyright Notice in lua.h
 */
 
@@ -212,7 +212,7 @@ static void DumpHeader (DumpState *D) {
 
 
 /*
-** dump Lua function as precompiled chunk
+** dump LUA function as precompiled chunk
 */
 int luaU_dump(lua_State *L, const Proto *f, lua_Writer w, void *data,
               int strip) {

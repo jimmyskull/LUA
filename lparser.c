@@ -1,6 +1,6 @@
 /*
 ** $Id: lparser.c,v 2.180 2018/04/04 14:23:41 roberto Exp roberto $
-** Lua Parser
+** LUA Parser
 ** See Copyright Notice in lua.h
 */
 
@@ -1327,7 +1327,7 @@ static int exp1 (LexState *ls, int i) {
 
 /*
 ** Fix for instruction at position 'pc' to jump to 'dest'.
-** (Jump addresses are relative in Lua). 'back' true means
+** (Jump addresses are relative in LUA). 'back' true means
 ** a back jump.
 */
 static void fixforjump (FuncState *fs, int pc, int dest, int back) {

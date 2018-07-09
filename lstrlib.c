@@ -1015,7 +1015,7 @@ static void addquoted (luaL_Buffer *b, const char *s, size_t len) {
 
 /*
 ** Serialize a floating-point number in such a way that it can be
-** scanned back by Lua. Use hexadecimal format for "common" numbers
+** scanned back by LUA. Use hexadecimal format for "common" numbers
 ** (to preserve precision); inf, -inf, and NaN are handled separately.
 ** (NaN cannot be expressed as a numeral, so we write '(0/0)' for it.)
 */
@@ -1389,7 +1389,7 @@ static KOption getdetails (Header *h, size_t totalsize,
 /*
 ** Pack integer 'n' with 'size' bytes and 'islittle' endianness.
 ** The final 'if' handles the case when 'size' is larger than
-** the size of a Lua integer, correcting the extra sign-extension
+** the size of a LUA integer, correcting the extra sign-extension
 ** bytes if necessary (by default they would be zeros).
 */
 static void packint (luaL_Buffer *b, lua_Unsigned n,
@@ -1536,9 +1536,9 @@ static int str_packsize (lua_State *L) {
 
 /*
 ** Unpack an integer with 'size' bytes and 'islittle' endianness.
-** If size is smaller than the size of a Lua integer and integer
+** If size is smaller than the size of a LUA integer and integer
 ** is signed, must do sign extension (propagating the sign to the
-** higher bits); if size is larger than the size of a Lua integer,
+** higher bits); if size is larger than the size of a LUA integer,
 ** it must check the unread bytes to see whether they do not cause an
 ** overflow.
 */
@@ -1561,7 +1561,7 @@ static lua_Integer unpackint (lua_State *L, const char *str,
     int mask = (!issigned || (lua_Integer)res >= 0) ? 0 : MC;
     for (i = limit; i < size; i++) {
       if ((unsigned char)str[islittle ? i : size - 1 - i] != mask)
-        luaL_error(L, "%d-byte integer does not fit into Lua Integer", size);
+        luaL_error(L, "%d-byte integer does not fit into LUA Integer", size);
     }
   }
   return (lua_Integer)res;

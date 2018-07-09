@@ -1,7 +1,7 @@
 /*
 ** $Id: lua.h,v 1.346 2018/04/04 14:23:41 roberto Exp roberto $
-** Lua - A Scripting Language
-** Lua.org, PUC-Rio, Brazil (http://www.lua.org)
+** LUA - A Scripting Language
+** LUA.org, PUC-Rio, Brazil (http://www.lua.org)
 ** See Copyright Notice at the end of this file
 */
 
@@ -21,14 +21,14 @@
 #define LUA_VERSION_NUM		504
 #define LUA_VERSION_RELEASE	"0"
 
-#define LUA_VERSION	"Lua " LUA_VERSION_MAJOR "." LUA_VERSION_MINOR
+#define LUA_VERSION	"LUA " LUA_VERSION_MAJOR "." LUA_VERSION_MINOR
 #define LUA_RELEASE	LUA_VERSION "." LUA_VERSION_RELEASE
-#define LUA_COPYRIGHT	LUA_RELEASE "  Copyright (C) 1994-2018 Lua.org, PUC-Rio"
+#define LUA_COPYRIGHT	LUA_RELEASE "  Copyright (C) 1994-2018 LUA.org, PUC-Rio"
 #define LUA_AUTHORS	"R. Ierusalimschy, L. H. de Figueiredo, W. Celes"
 
 
 /* mark for precompiled code ('<esc>Lua') */
-#define LUA_SIGNATURE	"\x1bLua"
+#define LUA_SIGNATURE	"\x1bLUA"
 
 /* option for multiple returns in 'lua_pcall' and 'lua_call' */
 #define LUA_MULTRET	(-1)
@@ -75,7 +75,7 @@ typedef struct lua_State lua_State;
 
 
 
-/* minimum Lua stack available to a C function */
+/* minimum LUA stack available to a C function */
 #define LUA_MINSTACK	20
 
 
@@ -85,7 +85,7 @@ typedef struct lua_State lua_State;
 #define LUA_RIDX_LAST		LUA_RIDX_GLOBALS
 
 
-/* type of numbers in Lua */
+/* type of numbers in LUA */
 typedef LUA_NUMBER lua_Number;
 
 
@@ -100,7 +100,7 @@ typedef LUA_KCONTEXT lua_KContext;
 
 
 /*
-** Type for C functions registered with Lua
+** Type for C functions registered with LUA
 */
 typedef int (*lua_CFunction) (lua_State *L);
 
@@ -111,7 +111,7 @@ typedef int (*lua_KFunction) (lua_State *L, int status, lua_KContext ctx);
 
 
 /*
-** Type for functions that read/write blocks when loading/dumping Lua chunks
+** Type for functions that read/write blocks when loading/dumping LUA chunks
 */
 typedef const char * (*lua_Reader) (lua_State *L, void *ud, size_t *sz);
 
@@ -253,7 +253,7 @@ LUA_API int  (lua_getiuservalue) (lua_State *L, int idx, int n);
 
 
 /*
-** set functions (stack -> Lua)
+** set functions (stack -> LUA)
 */
 LUA_API void  (lua_setglobal) (lua_State *L, const char *name);
 LUA_API void  (lua_settable) (lua_State *L, int idx);
@@ -267,7 +267,7 @@ LUA_API int   (lua_setiuservalue) (lua_State *L, int idx, int n);
 
 
 /*
-** 'load' and 'call' functions (load and run Lua code)
+** 'load' and 'call' functions (load and run LUA code)
 */
 LUA_API void  (lua_callk) (lua_State *L, int nargs, int nresults,
                            lua_KContext ctx, lua_KFunction k);
@@ -469,7 +469,7 @@ struct lua_Debug {
 
 
 /******************************************************************************
-* Copyright (C) 1994-2018 Lua.org, PUC-Rio.
+* Copyright (C) 1994-2018 LUA.org, PUC-Rio.
 *
 * Permission is hereby granted, free of charge, to any person obtaining
 * a copy of this software and associated documentation files (the

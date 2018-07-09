@@ -1,6 +1,6 @@
 /*
 ** $Id: lcode.c,v 2.160 2018/03/16 14:22:09 roberto Exp roberto $
-** Code generator for Lua
+** Code generator for LUA
 ** See Copyright Notice in lua.h
 */
 
@@ -30,7 +30,7 @@
 #include "lvm.h"
 
 
-/* Maximum number of registers in a Lua function (must fit in 8 bits) */
+/* Maximum number of registers in a LUA function (must fit in 8 bits) */
 #define MAXREGS		255
 
 
@@ -122,7 +122,7 @@ static int getjump (FuncState *fs, int pc) {
 
 /*
 ** Fix jump instruction at position 'pc' to jump to 'dest'.
-** (Jump addresses are relative in Lua)
+** (Jump addresses are relative in LUA)
 */
 static void fixjump (FuncState *fs, int pc, int dest) {
   Instruction *jmp = &fs->f->code[pc];

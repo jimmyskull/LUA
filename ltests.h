@@ -1,6 +1,6 @@
 /*
 ** $Id: ltests.h,v 2.58 2018/04/19 15:42:41 roberto Exp roberto $
-** Internal Header for Debugging of the Lua Implementation
+** Internal Header for Debugging of the LUA Implementation
 ** See Copyright Notice in lua.h
 */
 
@@ -11,7 +11,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* test Lua with compatibility code */
+/* test LUA with compatibility code */
 #define LUA_COMPAT_MATHLIB
 
 
@@ -28,7 +28,7 @@
 #define LUAI_DEFOPNAMES
 
 
-/* compiled with -O0, Lua uses a lot of C stack space... */
+/* compiled with -O0, LUA uses a lot of C stack space... */
 #undef LUAI_MAXCCALLS
 #define LUAI_MAXCCALLS	200
 
@@ -74,7 +74,7 @@ extern void *l_Trick;
 
 
 /*
-** Function to traverse and check all memory used by Lua
+** Function to traverse and check all memory used by LUA
 */
 int lua_checkmemory (lua_State *L);
 

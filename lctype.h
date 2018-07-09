@@ -1,6 +1,6 @@
 /*
 ** $Id: lctype.h,v 1.12 2011/07/15 12:50:29 roberto Exp roberto $
-** 'ctype' functions for Lua
+** 'ctype' functions for LUA
 ** See Copyright Notice in lua.h
 */
 
@@ -13,7 +13,7 @@
 /*
 ** WARNING: the functions defined here do not necessarily correspond
 ** to the similar functions in the standard C ctype.h. They are
-** optimized for the specific needs of Lua
+** optimized for the specific needs of LUA
 */
 
 #if !defined(LUA_USE_CTYPE)

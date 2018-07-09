@@ -1,6 +1,6 @@
 /*
 ** $Id: lvm.c,v 2.358 2018/06/15 14:14:20 roberto Exp roberto $
-** Lua virtual machine
+** LUA virtual machine
 ** See Copyright Notice in lua.h
 */
 
@@ -471,7 +471,7 @@ int luaV_lessequal (lua_State *L, const TValue *l, const TValue *r) {
 
 
 /*
-** Main operation for equality of Lua values; return 't1 == t2'.
+** Main operation for equality of LUA values; return 't1 == t2'.
 ** L == NULL means raw equality (no metamethods)
 */
 int luaV_equalobj (lua_State *L, const TValue *t1, const TValue *t2) {
@@ -696,7 +696,7 @@ static LClosure *getcached (Proto *p, UpVal **encup, StkId base) {
 
 
 /*
-** create a new Lua closure, push it in the stack, and initialize
+** create a new LUA closure, push it in the stack, and initialize
 ** its upvalues. ???
 */
 static void pushclosure (lua_State *L, Proto *p, UpVal **encup, StkId base,
@@ -1594,7 +1594,7 @@ void luaV_execute (lua_State *L, CallInfo *ci) {
           luaD_poscall(L, ci, cast_int(L->top - ra));
           return;
         }
-        else {  /* Lua tail call */
+        else {  /* LUA tail call */
           ci->func -= delta;
           luaD_pretailcall(L, ci, ra, b);  /* prepare call frame */
           goto tailcall;

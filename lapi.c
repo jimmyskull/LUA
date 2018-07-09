@@ -1,6 +1,6 @@
 /*
 ** $Id: lapi.c,v 2.294 2018/06/15 19:31:22 roberto Exp roberto $
-** Lua API
+** LUA API
 ** See Copyright Notice in lua.h
 */
 
@@ -756,7 +756,7 @@ LUA_API int lua_getiuservalue (lua_State *L, int idx, int n) {
 
 
 /*
-** set functions (stack -> Lua)
+** set functions (stack -> LUA)
 */
 
 /*
@@ -931,7 +931,7 @@ LUA_API int lua_setiuservalue (lua_State *L, int idx, int n) {
 
 
 /*
-** 'load' and 'call' functions (run Lua code)
+** 'load' and 'call' functions (run LUA code)
 */
 
 
@@ -1269,7 +1269,7 @@ static const char *aux_upvalue (TValue *fi, int n, TValue **val,
       if (owner) *owner = obj2gco(f);
       return "";
     }
-    case LUA_TLCL: {  /* Lua closure */
+    case LUA_TLCL: {  /* LUA closure */
       LClosure *f = clLvalue(fi);
       TString *name;
       Proto *p = f->p;
@@ -1320,7 +1320,7 @@ LUA_API const char *lua_setupvalue (lua_State *L, int funcindex, int n) {
 static UpVal **getupvalref (lua_State *L, int fidx, int n, LClosure **pf) {
   LClosure *f;
   TValue *fi = index2value(L, fidx);
-  api_check(L, ttisLclosure(fi), "Lua function expected");
+  api_check(L, ttisLclosure(fi), "LUA function expected");
   f = clLvalue(fi);
   api_check(L, (1 <= n && n <= f->p->sizeupvalues), "invalid upvalue index");
   if (pf) *pf = f;

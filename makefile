@@ -1,4 +1,4 @@
-# makefile for building Lua
+# makefile for building LUA
 # see INSTALL for installation instructions
 # see ../Makefile and luaconf.h for further customization
 
@@ -78,7 +78,7 @@ AUX_O=	lauxlib.o
 LIB_O=	lbaselib.o ldblib.o liolib.o lmathlib.o loslib.o ltablib.o lstrlib.o \
 	lutf8lib.o loadlib.o lcorolib.o linit.o
 
-LUA_T=	lua
+LUA_T=	LUA
 LUA_O=	lua.o
 
 # LUAC_T=	luac

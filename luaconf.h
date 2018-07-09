@@ -1,6 +1,6 @@
 /*
 ** $Id: luaconf.h,v 1.270 2018/06/18 12:51:05 roberto Exp roberto $
-** Configuration file for Lua
+** Configuration file for LUA
 ** See Copyright Notice in lua.h
 */
 
@@ -21,16 +21,16 @@
 
 /*
 ** {====================================================================
-** System Configuration: macros to adapt (if needed) Lua to some
+** System Configuration: macros to adapt (if needed) LUA to some
 ** particular platform, for instance compiling it with 32-bit numbers or
 ** restricting it to C89.
 ** =====================================================================
 */
 
 /*
-@@ LUA_32BITS enables Lua with 32-bit integers and 32-bit floats. You
+@@ LUA_32BITS enables LUA with 32-bit integers and 32-bit floats. You
 ** can also define LUA_32BITS in the make file, but changing here you
-** ensure that all software connected to Lua will be compiled with the
+** ensure that all software connected to LUA will be compiled with the
 ** same configuration.
 */
 /* #define LUA_32BITS */
@@ -38,14 +38,14 @@
 
 /*
 @@ LUA_USE_C89 controls the use of non-ISO-C89 features.
-** Define it if you want Lua to avoid the use of a few C99 features
+** Define it if you want LUA to avoid the use of a few C99 features
 ** or Windows-specific features on Windows.
 */
 /* #define LUA_USE_C89 */
 
 
 /*
-** By default, Lua on Windows use (some) specific Windows features
+** By default, LUA on Windows use (some) specific Windows features
 */
 #if !defined(LUA_USE_C89) && defined(_WIN32) && !defined(_WIN32_WCE)
 #define LUA_USE_WINDOWS  /* enable goodies for regular Windows */
@@ -71,7 +71,7 @@
 
 
 /*
-@@ LUA_C89_NUMBERS ensures that Lua uses the largest types available for
+@@ LUA_C89_NUMBERS ensures that LUA uses the largest types available for
 ** C89 ('long' and 'double'); Windows always has '__int64', so it does
 ** not need to use this case.
 */
@@ -94,9 +94,9 @@
 
 
 /*
-@@ LUA_INT_TYPE defines the type for Lua integers.
-@@ LUA_FLOAT_TYPE defines the type for Lua floats.
-** Lua should work fine with any mix of these options (if supported
+@@ LUA_INT_TYPE defines the type for LUA integers.
+@@ LUA_FLOAT_TYPE defines the type for LUA floats.
+** LUA should work fine with any mix of these options (if supported
 ** by your C compiler). The usual configurations are 64-bit integers
 ** and 'double' (the default), 32-bit integers and 'float' (for
 ** restricted platforms), and 'long'/'double' (for C compilers not
@@ -135,7 +135,7 @@
 
 
 /*
-** default configuration for 64-bit Lua ('long long' and 'double')
+** default configuration for 64-bit LUA ('long long' and 'double')
 */
 #if !defined(LUA_INT_TYPE)
 #define LUA_INT_TYPE	LUA_INT_LONGLONG
@@ -169,9 +169,9 @@
 
 
 /*
-@@ LUA_PATH_DEFAULT is the default path that Lua uses to look for
-** Lua libraries.
-@@ LUA_CPATH_DEFAULT is the default path that Lua uses to look for
+@@ LUA_PATH_DEFAULT is the default path that LUA uses to look for
+** LUA libraries.
+@@ LUA_CPATH_DEFAULT is the default path that LUA uses to look for
 ** C libraries.
 ** CHANGE them if your machine has a non-conventional directory
 ** hierarchy or if you want to install your libraries in
@@ -213,7 +213,7 @@
 /*
 @@ LUA_DIRSEP is the directory separator (for submodules).
 ** CHANGE it if your machine does not use "/" as the directory separator
-** and is not Windows. (On Windows Lua automatically uses "\".)
+** and is not Windows. (On Windows LUA automatically uses "\".)
 */
 #if defined(_WIN32)
 #define LUA_DIRSEP	"\\"
@@ -269,7 +269,7 @@
 ** definitions and LUAI_DDEC for declarations).
 ** CHANGE them if you need to mark them in some special way. Elf/gcc
 ** (versions 3.2 and later) mark them as "hidden" to optimize access
-** when Lua is compiled as a shared library. Not all elf targets support
+** when LUA is compiled as a shared library. Not all elf targets support
 ** this attribute. Unfortunately, gcc does not offer a way to check
 ** whether the target offers that support, and those without support
 ** give a warning about it. To avoid these warnings, change to the
@@ -295,7 +295,7 @@
 */
 
 /*
-@@ LUA_COMPAT_5_3 controls other macros for compatibility with Lua 5.2.
+@@ LUA_COMPAT_5_3 controls other macros for compatibility with LUA 5.2.
 ** You can define it to get all options, or change specific options
 ** to fit your specific needs.
 */
@@ -345,7 +345,7 @@
 */
 
 /*
-@@ LUA_NUMBER is the floating-point type used by Lua.
+@@ LUA_NUMBER is the floating-point type used by LUA.
 @@ LUAI_UACNUMBER is the result of a 'default argument promotion'
 @@ over a floating number.
 @@ l_mathlim(x) corrects limit name 'x' to the proper float type
@@ -438,7 +438,7 @@
 
 
 /*
-@@ LUA_INTEGER is the integer type used by Lua.
+@@ LUA_INTEGER is the integer type used by LUA.
 **
 @@ LUA_UNSIGNED is the unsigned version of LUA_INTEGER.
 **
@@ -537,7 +537,7 @@
 
 /*
 @@ l_sprintf is equivalent to 'snprintf' or 'sprintf' in C89.
-** (All uses in Lua have only one format item.)
+** (All uses in LUA have only one format item.)
 */
 #if !defined(LUA_USE_C89)
 #define l_sprintf(s,sz,f,i)	snprintf(s,sz,f,i)
@@ -549,7 +549,7 @@
 /*
 @@ lua_strx2number converts a hexadecimal numeric string to a number.
 ** In C99, 'strtod' does that conversion. Otherwise, you can
-** leave 'lua_strx2number' undefined and Lua will provide its own
+** leave 'lua_strx2number' undefined and LUA will provide its own
 ** implementation.
 */
 #if !defined(LUA_USE_C89)
@@ -567,7 +567,7 @@
 /*
 @@ lua_number2strx converts a float to a hexadecimal numeric string.
 ** In C99, 'sprintf' (with format specifiers '%a'/'%A') does that.
-** Otherwise, you can leave 'lua_number2strx' undefined and Lua will
+** Otherwise, you can leave 'lua_number2strx' undefined and LUA will
 ** provide its own implementation.
 */
 #if !defined(LUA_USE_C89)
@@ -592,7 +592,7 @@
 
 /*
 @@ LUA_KCONTEXT is the type of the context ('ctx') for continuation
-** functions.  It must be a numerical type; Lua will use 'intptr_t' if
+** functions.  It must be a numerical type; LUA will use 'intptr_t' if
 ** available, otherwise it will use 'ptrdiff_t' (the nearest thing to
 ** 'intptr_t' in C89)
 */
@@ -627,7 +627,7 @@
 */
 
 /*
-@@ LUA_NOCVTN2S/LUA_NOCVTS2N control how Lua performs some
+@@ LUA_NOCVTN2S/LUA_NOCVTS2N control how LUA performs some
 ** coercions. Define LUA_NOCVTN2S to turn off automatic coercion from
 ** numbers to strings. Define LUA_NOCVTS2N to turn off automatic
 ** coercion from strings to numbers.
@@ -651,15 +651,15 @@
 /*
 ** {==================================================================
 ** Macros that affect the API and must be stable (that is, must be the
-** same when you compile Lua and when you compile code that links to
-** Lua). You probably do not want/need to change them.
+** same when you compile LUA and when you compile code that links to
+** LUA). You probably do not want/need to change them.
 ** =====================================================================
 */
 
 /*
-@@ LUAI_MAXSTACK limits the size of the Lua stack.
+@@ LUAI_MAXSTACK limits the size of the LUA stack.
 ** CHANGE it if you need a different limit. This limit is arbitrary;
-** its only purpose is to stop Lua from consuming unlimited stack
+** its only purpose is to stop LUA from consuming unlimited stack
 ** space (and to reserve some numbers for pseudo-indices).
 ** (It must fit into max(size_t)/32.)
 */
@@ -672,7 +672,7 @@
 
 /*
 @@ LUA_EXTRASPACE defines the size of a raw memory area associated with
-** a Lua state with very fast access.
+** a LUA state with very fast access.
 ** CHANGE it if you need a different size.
 */
 #define LUA_EXTRASPACE		(sizeof(void *))

@@ -1,6 +1,6 @@
 /*
 ** $Id: lstring.c,v 2.65 2018/02/20 16:52:50 roberto Exp roberto $
-** String table (keeps all strings handled by Lua)
+** String table (keeps all strings handled by LUA)
 ** See Copyright Notice in lua.h
 */
 
@@ -23,7 +23,7 @@
 
 
 /*
-** Lua will use at most ~(2^LUAI_HASHLIMIT) bytes from a string to
+** LUA will use at most ~(2^LUAI_HASHLIMIT) bytes from a string to
 ** compute its hash
 */
 #if !defined(LUAI_HASHLIMIT)

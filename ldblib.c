@@ -1,6 +1,6 @@
 /*
 ** $Id: ldblib.c,v 1.154 2018/03/05 14:15:04 roberto Exp roberto $
-** Interface from Lua to its debug API
+** Interface from LUA to its debug API
 ** See Copyright Notice in lua.h
 */
 
@@ -300,8 +300,8 @@ static int db_upvalueid (lua_State *L) {
 static int db_upvaluejoin (lua_State *L) {
   int n1 = checkupval(L, 1, 2);
   int n2 = checkupval(L, 3, 4);
-  luaL_argcheck(L, !lua_iscfunction(L, 1), 1, "Lua function expected");
-  luaL_argcheck(L, !lua_iscfunction(L, 3), 3, "Lua function expected");
+  luaL_argcheck(L, !lua_iscfunction(L, 1), 1, "LUA function expected");
+  luaL_argcheck(L, !lua_iscfunction(L, 3), 3, "LUA function expected");
   lua_upvaluejoin(L, 1, n1, 3, n2);
   return 0;
 }
@@ -379,7 +379,7 @@ static int db_sethook (lua_State *L) {
   checkstack(L, L1, 1);
   lua_pushthread(L1); lua_xmove(L1, L, 1);  /* key (thread) */
   lua_pushvalue(L, arg + 1);  /* value (hook function) */
-  lua_rawset(L, -3);  /* hooktable[L1] = new Lua hook */
+  lua_rawset(L, -3);  /* hooktable[L1] = new LUA hook */
   lua_sethook(L1, func, mask, count);
   return 0;
 }

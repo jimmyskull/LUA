@@ -1,6 +1,6 @@
 /*
 ** $Id: lauxlib.c,v 1.294 2018/02/27 18:47:32 roberto Exp roberto $
-** Auxiliary functions for building Lua libraries
+** Auxiliary functions for building LUA libraries
 ** See Copyright Notice in lua.h
 */
 
@@ -18,7 +18,7 @@
 
 
 /*
-** This file uses only the official API of Lua.
+** This file uses only the official API of LUA.
 ** Any function declared here could be written as an application function.
 */
 
@@ -100,7 +100,7 @@ static void pushfuncname (lua_State *L, lua_Debug *ar) {
     lua_pushfstring(L, "%s '%s'", ar->namewhat, ar->name);  /* use it */
   else if (*ar->what == 'm')  /* main? */
       lua_pushliteral(L, "main chunk");
-  else if (*ar->what != 'C')  /* for Lua functions, use <file:line> */
+  else if (*ar->what != 'C')  /* for LUA functions, use <file:line> */
     lua_pushfstring(L, "function <%s:%d>", ar->short_src, ar->linedefined);
   else  /* nothing left... */
     lua_pushliteral(L, "?");
@@ -232,7 +232,7 @@ LUALIB_API int luaL_error (lua_State *L, const char *fmt, ...) {
 
 
 LUALIB_API int luaL_fileresult (lua_State *L, int stat, const char *fname) {
-  int en = errno;  /* calls to Lua API may change this value */
+  int en = errno;  /* calls to LUA API may change this value */
   if (stat) {
     lua_pushboolean(L, 1);
     return 1;
@@ -362,7 +362,7 @@ LUALIB_API int luaL_checkoption (lua_State *L, int arg, const char *def,
 ** Ensures the stack has at least 'space' extra slots, raising an error
 ** if it cannot fulfill the request. (The error handling needs a few
 ** extra slots to format the error message. In case of an error without
-** this extra space, Lua will generate the same 'stack overflow' error,
+** this extra space, LUA will generate the same 'stack overflow' error,
 ** but without 'msg'.)
 */
 LUALIB_API void luaL_checkstack (lua_State *L, int space, const char *msg) {
@@ -936,9 +936,9 @@ static void *l_alloc (void *ud, void *ptr, size_t osize, size_t nsize) {
 
 
 static int panic (lua_State *L) {
-  lua_writestringerror("PANIC: unprotected error in call to Lua API (%s)\n",
+  lua_writestringerror("PANIC: unprotected error in call to LUA API (%s)\n",
                         lua_tostring(L, -1));
-  return 0;  /* return to Lua to abort */
+  return 0;  /* return to LUA to abort */
 }
 
 
@@ -954,7 +954,7 @@ LUALIB_API void luaL_checkversion_ (lua_State *L, lua_Number ver, size_t sz) {
   if (sz != LUAL_NUMSIZES)  /* check numeric types */
     luaL_error(L, "core and library have incompatible numeric types");
   else if (v != ver)
-    luaL_error(L, "version mismatch: app. needs %f, Lua core provides %f",
+    luaL_error(L, "version mismatch: app. needs %f, LUA core provides %f",
                   (LUAI_UACNUMBER)ver, (LUAI_UACNUMBER)v);
 }
 

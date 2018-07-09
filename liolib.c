@@ -435,7 +435,7 @@ static int readdigits (RN *rn, int hex) {
 /*
 ** Read a number: first reads a valid prefix of a numeral into a buffer.
 ** Then it calls 'lua_stringtonumber' to check whether the format is
-** correct and to convert it to a Lua number
+** correct and to convert it to a LUA number
 */
 static int read_number (lua_State *L, FILE *f) {
   RN rn;

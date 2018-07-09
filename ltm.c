@@ -108,7 +108,7 @@ void luaT_callTM (lua_State *L, const TValue *f, const TValue *p1,
   setobj2s(L, func + 2, p2);  /* 2nd argument */
   setobj2s(L, func + 3, p3);  /* 3rd argument */
   L->top = func + 4;
-  /* metamethod may yield only when called from Lua code */
+  /* metamethod may yield only when called from LUA code */
   if (isLuacode(L->ci))
     luaD_call(L, func, 0);
   else
@@ -124,7 +124,7 @@ void luaT_callTMres (lua_State *L, const TValue *f, const TValue *p1,
   setobj2s(L, func + 1, p1);  /* 1st argument */
   setobj2s(L, func + 2, p2);  /* 2nd argument */
   L->top += 3;
-  /* metamethod may yield only when called from Lua code */
+  /* metamethod may yield only when called from LUA code */
   if (isLuacode(L->ci))
     luaD_call(L, func, 1);
   else

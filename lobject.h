@@ -1,6 +1,6 @@
 /*
 ** $Id: lobject.h,v 2.145 2018/06/15 14:14:20 roberto Exp roberto $
-** Type definitions for Lua objects
+** Type definitions for LUA objects
 ** See Copyright Notice in lua.h
 */
 
@@ -38,7 +38,7 @@
 
 
 /*
-** Union of all Lua values
+** Union of all LUA values
 */
 typedef union Value {
   struct GCObject *gc;    /* collectable objects */
@@ -51,7 +51,7 @@ typedef union Value {
 
 
 /*
-** Tagged Values. This is the basic representation of values in Lua:
+** Tagged Values. This is the basic representation of values in LUA:
 ** an actual value plus a tag with its type.
 */
 
@@ -367,7 +367,7 @@ typedef union UTString {
   check_exp(sizeof((ts)->extra), cast_charp((ts)) + sizeof(UTString))
 
 
-/* get the actual string (array of bytes) from a Lua value */
+/* get the actual string (array of bytes) from a LUA value */
 #define svalue(o)       getstr(tsvalue(o))
 
 /* get string length from 'TString *s' */
@@ -486,7 +486,7 @@ typedef struct LocVar {
 ** Associates the absolute line source for a given instruction ('pc').
 ** The array 'lineinfo' gives, for each instruction, the difference in
 ** lines from the previous instruction. When that difference does not
-** fit into a byte, Lua saves the absolute line for that instruction.
+** fit into a byte, LUA saves the absolute line for that instruction.
 ** (Lua also saves the absolute line periodically, to speed up the
 ** computation of a line number: we can use binary search in the
 ** absolute-line array, but we must traverse the 'lineinfo' array
@@ -537,7 +537,7 @@ typedef struct Proto {
 */
 
 /* Variant tags for functions */
-#define LUA_TLCL	(LUA_TFUNCTION | (1 << 4))  /* Lua closure */
+#define LUA_TLCL	(LUA_TFUNCTION | (1 << 4))  /* LUA closure */
 #define LUA_TLCF	(LUA_TFUNCTION | (2 << 4))  /* light C function */
 #define LUA_TCCL	(LUA_TFUNCTION | (3 << 4))  /* C closure */
 
@@ -573,7 +573,7 @@ typedef struct Proto {
 
 
 /*
-** Upvalues for Lua closures
+** Upvalues for LUA closures
 */
 typedef struct UpVal {
   CommonHeader;

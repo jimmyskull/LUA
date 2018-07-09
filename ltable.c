@@ -1,6 +1,6 @@
 /*
 ** $Id: ltable.c,v 2.139 2018/06/15 14:14:20 roberto Exp roberto $
-** Lua tables (hash)
+** LUA tables (hash)
 ** See Copyright Notice in lua.h
 */
 
@@ -789,7 +789,7 @@ void luaH_setint (lua_State *L, Table *t, lua_Integer key, TValue *value) {
 ** is larger or equal to 'i', but it cannot be equal because it is
 ** absent while 'i' is present; so 'j > i'.) Otherwise, 'j' is a
 ** boundary. ('j + 1' cannot be a present integer key because it is
-** not a valid integer in Lua.)
+** not a valid integer in LUA.)
 */
 static lua_Unsigned hash_search (Table *t, lua_Unsigned j) {
   lua_Unsigned i;
@@ -831,7 +831,7 @@ static unsigned int binsearch (const TValue *array, unsigned int i,
 ** Try to find a boundary in table 't'. (A 'boundary' is an integer index
 ** such that t[i] is present and t[i+1] is absent, or 0 if t[1] is absent
 ** and 'maxinteger' if t[maxinteger] is present.)
-** (In the next explanation, we use Lua indices, that is, with base 1.
+** (In the next explanation, we use LUA indices, that is, with base 1.
 ** The code itself uses base 0 when indexing the array part of the table.)
 ** The code starts with 'limit', a position in the array part that may
 ** be a boundary.

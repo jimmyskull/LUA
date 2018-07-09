@@ -1,6 +1,6 @@
 /*
 ** $Id: ldo.c,v 2.201 2018/05/22 12:02:36 roberto Exp roberto $
-** Stack and Call structure of Lua
+** Stack and Call structure of LUA
 ** See Copyright Notice in lua.h
 */
 
@@ -45,8 +45,8 @@
 */
 
 /*
-** LUAI_THROW/LUAI_TRY define how Lua does exception handling. By
-** default, Lua handles errors with exceptions when compiling as
+** LUAI_THROW/LUAI_TRY define how LUA does exception handling. By
+** default, LUA handles errors with exceptions when compiling as
 ** C++ code, with _longjmp/_setjmp when asked to use them, and with
 ** longjmp/setjmp otherwise.
 */
@@ -302,7 +302,7 @@ void luaD_hook (lua_State *L, int event, int line,
 
 
 /*
-** Executes a call hook for Lua functions. This function is called
+** Executes a call hook for LUA functions. This function is called
 ** whenever 'hookmask' is not zero, so it checks whether call hooks are
 ** active.
 */
@@ -437,7 +437,7 @@ void luaD_pretailcall (lua_State *L, CallInfo *ci, StkId func, int narg1) {
 
 
 /*
-** Call a function (C or Lua). The function to be called is at *func.
+** Call a function (C or LUA). The function to be called is at *func.
 ** The arguments are on the stack, right after the function.
 ** When returns, all the results are on the stack, starting at the original
 ** function position.
@@ -472,7 +472,7 @@ void luaD_call (lua_State *L, StkId func, int nresults) {
       luaD_poscall(L, ci, n);
       break;
     }
-    case LUA_TLCL: {  /* Lua function */
+    case LUA_TLCL: {  /* LUA function */
       CallInfo *ci;
       Proto *p = clLvalue(funcv)->p;
       int narg = cast_int(L->top - func) - 1;  /* number of real arguments */
@@ -551,7 +551,7 @@ static void unroll (lua_State *L, void *ud) {
   while ((ci = L->ci) != &L->base_ci) {  /* something in the stack */
     if (!isLua(ci))  /* C function? */
       finishCcall(L, LUA_YIELD);  /* complete its execution */
-    else {  /* Lua function */
+    else {  /* LUA function */
       luaV_finishOp(L);  /* finish interrupted instruction */
       luaV_execute(L, ci);  /* execute down to higher C 'boundary' */
     }
@@ -627,7 +627,7 @@ static void resume (lua_State *L, void *ud) {
     lua_assert(L->status == LUA_YIELD);
     L->status = LUA_OK;  /* mark that it is running (again) */
     if (isLua(ci))  /* yielded inside a hook? */
-      luaV_execute(L, ci);  /* just continue running Lua code */
+      luaV_execute(L, ci);  /* just continue running LUA code */
     else {  /* 'common' yield */
       if (ci->u.c.k != NULL) {  /* does it have a continuation function? */
         lua_unlock(L);

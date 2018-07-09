@@ -1,6 +1,6 @@
 /*
 ** $Id: lobject.c,v 2.125 2018/04/25 16:26:20 roberto Exp roberto $
-** Some generic functions over Lua objects
+** Some generic functions over LUA objects
 ** See Copyright Notice in lua.h
 */
 
@@ -178,7 +178,7 @@ static int isneg (const char **s) {
 
 /*
 ** {==================================================================
-** Lua's implementation for 'lua_strx2number'
+** LUA's implementation for 'lua_strx2number'
 ** ===================================================================
 */
 
@@ -261,7 +261,7 @@ static const char *l_str2dloc (const char *s, lua_Number *result, int mode) {
 
 
 /*
-** Convert string 's' to a Lua number (put in 'result'). Return NULL
+** Convert string 's' to a LUA number (put in 'result'). Return NULL
 ** on fail or the address of the ending '\0' on success.
 ** 'pmode' points to (and 'mode' contains) special things in the string:
 ** - 'x'/'X' means a hexadecimal numeral
@@ -395,7 +395,7 @@ static void pushstr (lua_State *L, const char *str, size_t l) {
 
 /*
 ** this function handles only '%d', '%c', '%f', '%p', and '%s'
-   conventional formats, plus Lua-specific '%I' and '%U'
+   conventional formats, plus LUA-specific '%I' and '%U'
 */
 const char *luaO_pushvfstring (lua_State *L, const char *fmt, va_list argp) {
   int n = 0;  /* number of strings in the stack to concatenate */

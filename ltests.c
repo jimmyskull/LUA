@@ -1,6 +1,6 @@
 /*
 ** $Id: ltests.c,v 2.244 2018/06/11 14:19:50 roberto Exp roberto $
-** Internal Module for Debugging of the Lua Implementation
+** Internal Module for Debugging of the LUA Implementation
 ** See Copyright Notice in lua.h
 */
 
@@ -63,9 +63,9 @@ static void pushobject (lua_State *L, const TValue *o) {
 
 
 static int tpanic (lua_State *L) {
-  fprintf(stderr, "PANIC: unprotected error in call to Lua API (%s)\n",
+  fprintf(stderr, "PANIC: unprotected error in call to LUA API (%s)\n",
                    lua_tostring(L, -1));
-  return (exit(EXIT_FAILURE), 0);  /* do not return to Lua */
+  return (exit(EXIT_FAILURE), 0);  /* do not return to LUA */
 }
 
 
@@ -574,7 +574,7 @@ static int listcode (lua_State *L) {
   int pc;
   Proto *p;
   luaL_argcheck(L, lua_isfunction(L, 1) && !lua_iscfunction(L, 1),
-                 1, "Lua function expected");
+                 1, "LUA function expected");
   p = getproto(obj_at(L, 1));
   lua_newtable(L);
   setnameval(L, "maxstack", p->maxstacksize);
@@ -593,7 +593,7 @@ static int printcode (lua_State *L) {
   int pc;
   Proto *p;
   luaL_argcheck(L, lua_isfunction(L, 1) && !lua_iscfunction(L, 1),
-                 1, "Lua function expected");
+                 1, "LUA function expected");
   p = getproto(obj_at(L, 1));
   printf("maxstack: %d\n", p->maxstacksize);
   printf("numparams: %d\n", p->numparams);
@@ -609,7 +609,7 @@ static int listk (lua_State *L) {
   Proto *p;
   int i;
   luaL_argcheck(L, lua_isfunction(L, 1) && !lua_iscfunction(L, 1),
-                 1, "Lua function expected");
+                 1, "LUA function expected");
   p = getproto(obj_at(L, 1));
   lua_createtable(L, p->sizek, 0);
   for (i=0; i<p->sizek; i++) {
@@ -626,7 +626,7 @@ static int listlocals (lua_State *L) {
   int i = 0;
   const char *name;
   luaL_argcheck(L, lua_isfunction(L, 1) && !lua_iscfunction(L, 1),
-                 1, "Lua function expected");
+                 1, "LUA function expected");
   p = getproto(obj_at(L, 1));
   while ((name = luaF_getlocalname(p, ++i, pc)) != NULL)
     lua_pushstring(L, name);
@@ -1108,7 +1108,7 @@ static int checkpanic (lua_State *L) {
 /*
 ** {====================================================================
 ** function to test the API with C. It interprets a kind of assembler
-** language with calls to the API, so the test can be driven by Lua code
+** language with calls to the API, so the test can be driven by LUA code
 ** =====================================================================
 */
 

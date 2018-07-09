@@ -16,7 +16,7 @@
 
 /*
 
-** Some notes about garbage-collected objects: All objects in Lua must
+** Some notes about garbage-collected objects: All objects in LUA must
 ** be kept somehow accessible until being freed, so all objects always
 ** belong to one (and only one) of these lists, using field 'next' of
 ** the 'CommonHeader' for the link:
@@ -89,7 +89,7 @@ typedef struct CallInfo {
   StkId	top;  /* top for this function */
   struct CallInfo *previous, *next;  /* dynamic call link */
   union {
-    struct {  /* only for Lua functions */
+    struct {  /* only for LUA functions */
       const Instruction *savedpc;
       l_signalT trap;
       int nextraargs;  /* # of extra arguments in vararg functions */
@@ -126,10 +126,10 @@ typedef struct CallInfo {
 #define CIST_FIN	(1<<7)  /* call is running a finalizer */
 #define CIST_TRAN	(1<<8)	/* 'ci' has transfer information */
 
-/* active function is a Lua function */
+/* active function is a LUA function */
 #define isLua(ci)	(!((ci)->callstatus & CIST_C))
 
-/* call is running Lua code (not a hook) */
+/* call is running LUA code (not a hook) */
 #define isLuacode(ci)	(!((ci)->callstatus & (CIST_C | CIST_HOOKED)))
 
 /* assume that CIST_OAH has offset 0 and that 'v' is strictly 0/1 */
@@ -205,7 +205,7 @@ struct lua_State {
   GCObject *gclist;
   struct lua_State *twups;  /* list of threads with open upvalues */
   struct lua_longjmp *errorJmp;  /* current error recover point */
-  CallInfo base_ci;  /* CallInfo for first level (C calling Lua) */
+  CallInfo base_ci;  /* CallInfo for first level (C calling LUA) */
   volatile lua_Hook hook;
   ptrdiff_t errfunc;  /* current error handling function (stack index) */
   int stacksize;
@@ -253,8 +253,8 @@ union GCUnion {
 
 
 /*
-** macro to convert a Lua object into a GCObject
-** (The access to 'tt' tries to ensure that 'v' is actually a Lua object.)
+** macro to convert a LUA object into a GCObject
+** (The access to 'tt' tries to ensure that 'v' is actually a LUA object.)
 */
 #define obj2gco(v)	check_exp((v)->tt >= LUA_TSTRING, &(cast_u(v)->gc))
 

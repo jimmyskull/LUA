@@ -1,6 +1,6 @@
 /*
 ** $Id: loadlib.c,v 1.131 2017/12/13 12:51:42 roberto Exp roberto $
-** Dynamic library loader for Lua
+** Dynamic library loader for LUA
 ** See Copyright Notice in lua.h
 **
 ** This module contains an implementation of loadlib for Unix systems
@@ -37,7 +37,7 @@
 ** LUA_CSUBSEP is the character that replaces dots in submodule names
 ** when searching for a C loader.
 ** LUA_LSUBSEP is the character that replaces dots in submodule names
-** when searching for a Lua loader.
+** when searching for a LUA loader.
 */
 #if !defined(LUA_CSUBSEP)
 #define LUA_CSUBSEP		LUA_DIRSEP
@@ -225,7 +225,7 @@ static lua_CFunction lsys_sym (lua_State *L, void *lib, const char *sym) {
 #define LIB_FAIL	"absent"
 
 
-#define DLMSG	"dynamic libraries not enabled; check your Lua installation"
+#define DLMSG	"dynamic libraries not enabled; check your LUA installation"
 
 
 static void lsys_unloadlib (void *lib) {
@@ -258,7 +258,7 @@ static lua_CFunction lsys_sym (lua_State *L, void *lib, const char *sym) {
 
 /*
 ** LUA_PATH_VAR and LUA_CPATH_VAR are the names of the environment
-** variables that Lua check to set its paths.
+** variables that LUA check to set its paths.
 */
 #if !defined(LUA_PATH_VAR)
 #define LUA_PATH_VAR    "LUA_PATH"

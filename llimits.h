@@ -16,7 +16,7 @@
 
 /*
 ** 'lu_mem' and 'l_mem' are unsigned/signed integers big enough to count
-** the total memory used by Lua (in bytes). Usually, 'size_t' and
+** the total memory used by LUA (in bytes). Usually, 'size_t' and
 ** 'ptrdiff_t' should work, but we use 'long' for 16-bit machines.
 */
 #if defined(LUAI_MEM)		/* { external definitions? */
@@ -39,7 +39,7 @@ typedef signed char ls_byte;
 /* maximum value for size_t */
 #define MAX_SIZET	((size_t)(~(size_t)0))
 
-/* maximum size visible for Lua (must be representable in a lua_Integer */
+/* maximum size visible for LUA (must be representable in a lua_Integer */
 #define MAX_SIZE	(sizeof(size_t) < sizeof(lua_Integer) ? MAX_SIZET \
                           : (size_t)(LUA_MAXINTEGER))
 
@@ -204,7 +204,7 @@ typedef unsigned long Instruction;
 
 /*
 ** Initial size for the string table (must be power of 2).
-** The Lua core alone registers ~50 strings (reserved words +
+** The LUA core alone registers ~50 strings (reserved words +
 ** metaevent keys + a few others). Libraries would typically add
 ** a few dozens more.
 */
@@ -231,7 +231,7 @@ typedef unsigned long Instruction;
 
 
 /*
-** macros that are executed whenever program enters the Lua core
+** macros that are executed whenever program enters the LUA core
 ** ('lua_lock') and leaves the core ('lua_unlock')
 */
 #if !defined(lua_lock)
@@ -240,7 +240,7 @@ typedef unsigned long Instruction;
 #endif
 
 /*
-** macro executed during Lua functions at points where the
+** macro executed during LUA functions at points where the
 ** function can yield.
 */
 #if !defined(luai_threadyield)
